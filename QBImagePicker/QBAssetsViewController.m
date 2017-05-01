@@ -248,7 +248,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
         }
         
         //AZC: Order photos by most recently first
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:YES];
         options.sortDescriptors = @[sortDescriptor];
 
         self.fetchResult = [PHAsset fetchAssetsInAssetCollection:self.assetCollection options:options];
