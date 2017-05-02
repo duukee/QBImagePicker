@@ -7,6 +7,7 @@
 */
 
 "albums.title" = "照片";
+"albums.title.videos" = "视频";
 
 "assets.footer.photo" = "共%ld张照片";
 "assets.footer.photos" = "共%ld张照片";

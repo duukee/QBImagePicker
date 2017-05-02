@@ -7,6 +7,7 @@
 */
 
 "albums.title" = "Photos";
+"albums.title.videos" = "Videos";
 
 "assets.footer.photo" = "%ld Photo";
 "assets.footer.photos" = "%ld Photos";
