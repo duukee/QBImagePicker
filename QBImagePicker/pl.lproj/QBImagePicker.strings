@@ -6,8 +6,8 @@
  Copyright (c) 2015 Katsuma Tanaka. All rights reserved.
  */
 
-"albums.title" = "Zdjęcia";
-"albums.title.videos" = "Wideo";
+"albums.title" = "ZDJĘCIA";
+"albums.title.videos" = "WIDEO";
 
 "assets.footer.photo" = "%ld zdjęcie";
 "assets.footer.photos" = "Zdjęć: %ld";
