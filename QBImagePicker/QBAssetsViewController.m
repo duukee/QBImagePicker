@@ -413,11 +413,16 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
                         [self.collectionView insertItemsAtIndexPaths:[insertedIndexes qb_indexPathsFromIndexesWithSection:0]];
                     }
                     
-                    NSIndexSet *changedIndexes = [collectionChanges changedIndexes];
-                    if ([changedIndexes count]) {
-                        [self.collectionView reloadItemsAtIndexPaths:[changedIndexes qb_indexPathsFromIndexesWithSection:0]];
+                } completion:^(BOOL finished) {
+                    if (finished) {
+                        // Puting this after removes and inserts indexes fixes a crash of deleting and reloading at the same time.
+                        // From docs: When updating your app’s interface, apply changes after removals and insertions and before moves.
+                        NSIndexSet *changedIndexes = [collectionChanges changedIndexes];
+                        if ([changedIndexes count]) {
+                            [self.collectionView reloadItemsAtIndexPaths:[changedIndexes qb_indexPathsFromIndexesWithSection:0]];
+                        }
                     }
-                } completion:NULL];
+                }];
             }
             
             [self resetCachedAssets];
